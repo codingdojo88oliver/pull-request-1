@@ -11,10 +11,21 @@ class GitCommand {
 
     //Command: git status
     status(){        
-        /*
-            For assignment #1:
-            Create logic here and run unit testing.
-        */
+        var changes  = "";
+        var count   = 0;
+
+        for (const key in this.working_directory['new_changes']) {
+            if (Object.hasOwnProperty.call(this.working_directory['new_changes'], key)) {
+                changes += "\n" + key; 
+                count++;
+            }
+        }
+
+        if (count == 0) {
+            return "You have 0 change/s.\n";
+        } else {
+            return "You have " + count + " change/s." + changes;
+        }
     }
 
     //Command: git add <filename/file directory/wildcard> 
