@@ -18,6 +18,7 @@ class GitCommand {
             if (Object.hasOwnProperty.call(this.working_directory['new_changes'], key)) {
                 changes += "\n" + key; 
                 count++;
+                //change
             }
         }
 
